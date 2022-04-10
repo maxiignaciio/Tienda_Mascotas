@@ -90,6 +90,7 @@ body{
 .contenedor-inferior a{
     list-style: none;
     color: black;
+    text-decoration: none;
 }
 
 .lateral_1 a{
@@ -103,10 +104,12 @@ body{
     padding: 30px;
     background-color: white;
     font-family: verdana;
+    /* list-style: none; */
 }
  
 .lateral_1 {
     text-align: right;
+    /* list-style: none; */
 }
 
 .lateral_1 img{
