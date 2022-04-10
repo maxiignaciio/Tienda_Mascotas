@@ -80,8 +80,8 @@
     background-color: pink;
     color: white;
 }
-
-@media screen and (max-width:720px) {
+/* diseño para celulares */
+@media (min-width: 320px) and (max-width:480px) {
     .header {
         flex-direction: column;
     }
@@ -91,10 +91,16 @@
     }
 
     .flex-item img{
-        width: 350px;
+        width: 320px;
     }
 
     .footer {
+        display: none;
+    }
+}
+/* diseño para tablets */
+@media (min-width: 481px) and (max-width: 768px){
+    .footer{
         display: none;
     }
 }

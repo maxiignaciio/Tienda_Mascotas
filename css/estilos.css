@@ -130,7 +130,7 @@ body{
     color: white;
 }
 /* Tamaño para celulares */
-@media screen and (max-width:720px) {
+@media (min-width: 320px) and (max-width:480px) {
     .header {
         flex-direction: column;
         width: auto;
@@ -149,6 +149,13 @@ body{
     }
 
     .footer {
+        display: none;
+    }
+}
+
+/* diseño para tablets */
+@media (min-width: 481px) and (max-width: 768px){
+    .footer{
         display: none;
     }
 }
