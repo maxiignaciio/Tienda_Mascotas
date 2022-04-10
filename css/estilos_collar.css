@@ -100,6 +100,16 @@
 }
 /* diseño para tablets */
 @media (min-width: 481px) and (max-width: 768px){
+
+    .flex-container{
+        flex-direction: column;
+    }
+
+    .flex-item img{
+        width: 470px;
+        text-align: center;
+    }
+
     .footer{
         display: none;
     }
