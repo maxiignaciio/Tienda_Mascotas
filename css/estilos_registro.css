@@ -87,43 +87,32 @@ body{
     height: 16px;
 }
 
-.contenedor-inferior a{
-    list-style: none;
-    color: black;
-    text-decoration: none;
+.menu-login{
+    border: 1px black;
+    width: 100%;
+    /* text-align: center; */
+    /* align-items: center; */
 }
 
-.lateral_1 a{
-    list-style: none;
-    color: black;
+.form-group{
+    align-items: center;
 }
 
-.lateral_1, .lateral_2 {
-    width: 50%;
-    /* height: 500px; */
-    padding: 30px;
-    background-color: white;
-    font-family: verdana;
-    /* list-style: none; */
-}
- 
-.lateral_1 {
-    text-align: right;
-    /* list-style: none; */
+.foto-perros{
+    text-align: center;
 }
 
-.lateral_1 img{
-    width: 50%;
+form{
+    border: 1px solid black;
+    justify-content: center;
+    background-color: pink;
 }
- 
-.lateral_2 img {
-    width: 50%;
+
+.form-control{
+    width: 35%;
+    align-items: center;
 }
- 
-.contenedor-inferior {
-    display: flex;
-}
- 
+
 .footer {
     text-align: center;
     background-color: pink;
@@ -136,16 +125,8 @@ body{
         width: auto;
     }
 
-    .contenedor-inferior{
-        flex-direction: column;
-    }
-
-    .lateral_1  a, .lateral_2 a{
-        text-align: center;
-    }
-
-    .contenedor-inferior img{
-        width: 300px;
+    .foto-perros{
+        display: none;
     }
 
     .footer {
@@ -155,6 +136,10 @@ body{
 
 /* diseño para tablets */
 @media (min-width: 481px) and (max-width: 768px){
+    .foto-perros{
+        display: none;
+    }
+
     .footer{
         display: none;
     }
