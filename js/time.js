@@ -1,23 +1,23 @@
 // http://worldtimeapi.org/api/ip
 
-$("#btn-actualizar").click(function (event) {
-    event.preventDefault();
-   
-    var url = "http://worldtimeapi.org/api/ip";
-   
-      fetch(url)
-          .then(response => response.json())
-          .then(data => 
-              {
-                  var $date_time = $('<h1>').text(datetime);
+const api_url = 'http://worldtimeapi.org/api/ip';
+async function getTime() {
+    const response = await fetch(api_url);
+    const data = await response.json();
+    console.log(data);
+    console.log(data.datetime);
+    console.log(data.timezone);
+    
+    document.getElementById('hr').textContent = data.datetime;
+    document.getElementById('reg').textContent = data.timezone;
+}
 
-                  $("#info").empty();
-                  $('#info')
-                      .append($date_time)
 
-   
-              })
-          .catch(error => console.error(error));
-   
-  });
-  
+getTime();
+
+
+// implementacion: 
+{/* <p>Hora: <span id="hr"></span><br/>
+                Region: <span id="reg"></span></p> */}
+
+// "hr" y "reg" son Id de elemento

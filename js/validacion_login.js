@@ -1,3 +1,4 @@
+// Validaciones
 $(document).ready(function () {
     $('#form-login').validate({
         rules: {
@@ -28,7 +29,6 @@ $(document).ready(function () {
         },
         errorElement: "em",
         errorPlacement: function (error, element) {
-            // Add the `help-block` class to the error element
             error.addClass("help-block");
 
             if (element.prop("type") === "checkbox") {
