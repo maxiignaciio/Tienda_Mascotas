@@ -8,8 +8,12 @@ async function getTime() {
     console.log(data.datetime);
     console.log(data.timezone);
     
-    document.getElementById('hr').textContent = data.datetime;
+    const hora = data.datetime.substring(11, 16)
+    const dia = data.datetime.substring(0, 10)
+
+    document.getElementById('hr').textContent = hora;
     document.getElementById('reg').textContent = data.timezone;
+    document.getElementById('dia').textContent = dia;
 }
 
 
