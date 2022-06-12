@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+<!-- home.html -->
+{% block title %}Home Page{% endblock title %}
+{% block content %} 
+    <h2>Home</h2>
+
+    <!--- ahora el cuerpo principal donde esta cabeza de perro-->
+    <section>
+        <div class="principal"> 
+            <div id="myCarousel" class="carousel slide pointer-event" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href="pagina_cama_sofa_azul.html"> <!-- LINK A PAGINA-->
+                    <img src="../static/images/productos/cama-sofa-azul-348538_900x.jpg" alt="cama" class="center">
+                    </a>
+                    <div class="container">
+                      <div class="carousel-caption text-start">
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="pagina_correa_arena.html">
+                    <img src="../static/images/productos/nueva-correa-arena-2022-567399_900x.jpg" alt="correa" class="center">
+                  </a>
+                    <div class="container">
+                      <div class="carousel-caption">
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="pagina_collar.html">
+                    <img src="../static/images/productos/nuevo-collar-arena-2022-725709_900x.jpg" alt="collar" class="center">
+                    </a>
+                    <div class="container">
+                      <div class="carousel-caption text-end">
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </section>
+    <section class="contenido" id="Contacto">
+        <div class="fono" id="Fono">
+            <h5><a>+56 9 98765431</a></h5>
+        </div>
+        <div class="rescate">
+            <h5><a>Productos para tus Mascotas</a></h5>
+        </div>
+        <div class="redes" id="RS">
+            <ul>
+                <li>
+                    <img src="../static/images/icons/facebook-f-brands.svg" alt="facebook" />
+                </li>
+                <li>
+                    <img src="../static/images/icons/google-plus-g-brands.svg" alt="google+" />
+                </li>
+                <li>
+                    <img src="../static/images/icons/instagram-brands.svg" alt="instagram" />
+                </li>
+                <li>
+                    <img src="../static/images/icons/envelope-solid.svg" alt="mail" />
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- {% if user.is_authenticated %}
+        <p>Bienvenido a nuestra Pagina - {{user.username}}</p>
+        <p>Your name is - {{user.first_name}} {{user.last_name}}</p>
+        <p>Your email is - {{user.email}}</p>
+        <br><br>
+    {% endif %} -->
+{% endblock content %}
