@@ -1,0 +1,54 @@
+{% extends 'Usuario/base/base.html' %} 
+
+{% block content %}
+    <div class="container">
+      <!-- INICIO DEL HEADER -->
+
+      <!-- FIN DEL HEADER -->
+      
+      <div id="registro" class="container">
+        {% block header %} 
+        <a href="{% url 'home' %}"> <!-- VA A HOME -->
+          <img sr="../../static/images/logo.png" alt="logo" >
+        </a>
+        {% endblock header %}
+          <h1 class="display">Inicio de sesión</h1><br>
+          <form method="POST" id="formulario">
+              {% csrf_token %}
+                      <div class="form-group">
+                        <label for="username">Usuario</label><br>
+                        <input name="username" class="form-control" type="text"/>
+                        <div class="bg-danger mt-1">{{ form.errors.username }}</div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="password">Contraseña</label><br>
+                        <input name="password" class="form-control" type="password"/>
+                        <div class="bg-danger mt-1">{{ form.errors.password }}</div>
+                    </div>
+                    <input type="checkbox" onclick="myFunction()"/>Mostrar contraseña
+                    
+        {% if form.non_field_errors %}
+        <div class="form-group">
+            <div class="bg-danger mt-1 p-2">Login incorrecto!</div>
+        </div>  
+        {% endif %}
+        
+        {{form.non_field_errors}}
+
+        <div class="form-group">
+            <input class="btn" type="submit" value="Enviar" style="background-color: blue; color: white;"/>
+        </div>
+        <a href="{% url 'registrar' %}">¿No tienes cuenta? Registrate</a>
+    </form>
+    
+</div>
+{% block imagen-perros %}
+<div class="imagen-perros">
+  <img src="../../static/images/perros/perros.jpg" alt="perros"/>
+</div>.
+{% endblock imagen-perros %}
+   
+{% endblock %}
+{% block footer %} {% endblock footer %}
+{% block extrajs %} {% endblock extrajs %}

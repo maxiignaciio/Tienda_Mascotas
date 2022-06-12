@@ -1,0 +1,153 @@
+.header {
+    background-color: pink;
+    display: flex;
+    justify-content: space-around;
+}
+
+body{
+    font-family: 'Anybody', cursive;
+}
+ 
+.navegacion {
+    float: right;
+}
+
+.nav-item{
+    color: white;
+}
+
+.text-nav{
+    text-decoration: none;
+    margin-left: 20px;
+    color: white;
+}
+
+.text-nav:hover{
+    background-color: white;
+    color: black;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+#contenedorPerror {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
+    background-color: palevioletred;
+}
+ 
+.abajo_del_perro {
+    display: flex;
+    justify-content: space-around;
+}
+ 
+.contenido {
+    display: flex;
+    background-color: pink;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    font-family: verdana;
+    font-weight: bold;
+}
+ 
+.principal {
+    background-color: palevioletred;
+}
+ 
+.fono {
+    width: 30%;
+}
+ 
+.rescate {
+    width: 40%;
+    text-align: center;
+}
+ 
+.redes {
+    width: 30%;
+    text-align: center;
+}
+ 
+.redes ul li {
+    background-color: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+ 
+.redes img {
+    height: 16px;
+}
+
+.menu-login{
+    border: 1px black;
+    width: 100%;
+    /* text-align: center; */
+    /* align-items: center; */
+}
+
+.form-group{
+    align-items: center;
+}
+
+.foto-perros{
+    text-align: center;
+}
+
+form{
+    border: 1px solid black;
+    justify-content: center;
+    background-color: pink;
+}
+
+.form-control{
+    width: 35%;
+    align-items: center;
+}
+
+.footer {
+    text-align: center;
+    background-color: pink;
+    color: white;
+}
+/* Tamaño para celulares */
+@media (min-width: 0px) and (max-width:480px) {
+    .header {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .foto-perros{
+        display: none;
+    }
+
+    .footer {
+        display: none;
+    }
+}
+
+/* diseño para tablets */
+@media (min-width: 481px) and (max-width: 768px){
+    .foto-perros{
+        display: none;
+    }
+
+    .footer{
+        display: none;
+    }
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

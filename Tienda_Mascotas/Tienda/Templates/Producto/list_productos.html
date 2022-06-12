@@ -1,0 +1,44 @@
+{% extends 'Producto/base.html' %} {% block titulo_principal %}
+
+<div id="titulo_pagina">Lista de Productos Registrados</div>
+{% endblock %} {% block content %}
+
+<h3>Listado de Productos</h3>
+
+{% if object_list %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Stock</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for producto in object_list %}
+    <tr>
+      <th scope="row">{{ producto.nombre }}</th>
+      <td>{{ producto.stock }}</td>
+      <td>{{ producto.descripcion }}</td>
+      <td>${{ producto.precio }}</td>
+
+      <td>
+        <a class="btn btn-primary" href="{% url 'edit_producto' producto.id %}"
+          >Editar</a
+        >
+      </td>
+      <td>
+        <a class="btn btn-danger" href="{% url 'del_producto' producto.id %}"
+          >Eliminar</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+<h1>No hay registros de producto</h1>
+{% endif %} {% endblock %}

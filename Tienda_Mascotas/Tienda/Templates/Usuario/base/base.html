@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    {% block extrastatic %}
+    {% endblock %}
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- JQUERY VALIDATE -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/localization/messages_es.min.js"
+      integrity="sha512-Ou4GV0BYVfilQlKiSHUNrsoL1nznkcZ0ljccGeWYSaK2CaVzof2XaZ5VEm5/yE/2hkzjxZngQHVwNUiIRE8yLw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/estilos_login.css'%}" />
+    <title>{% block title %} Tienda Mascotas - Login {% endblock %}</title>
+</head>
+
+<body>
+    <div class="container">
+        {%block header%} 
+        <a href="{% url 'home' %}"> <!-- VA A HOME -->
+            <link rel="stylesheet" href="../../static/images/logo.png">
+          </a>
+        {%endblock%}
+
+        {% block content %}
+        <h4> Bloque de contenido </h4>
+        {% endblock %}
+        {% block imagen-perros %} {% endblock %}
+        {% block footer %}
+        <footer class="footer">Tienda para Mascotas &COPY; 2022</footer>
+        {% endblock%}
+    </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- JQUERY -->
+<script
+src="https://code.jquery.com/jquery-1.12.4.min.js"
+integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+crossorigin="anonymous"
+></script>
+
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+crossorigin="anonymous"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+<script src="{% static 'js/validacion_login,js'%}"></script>
+<script src="{% static 'js/password.js' %}"></script>
+    {% block extrajs %}
+    
+    {% endblock %}
+
+</body>
+
+</html>
