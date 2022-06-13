@@ -1,5 +1,5 @@
 {% extends 'Usuario/base/base.html' %} 
-
+{% load static %}
 {% block content %}
     <div class="container">
       <!-- INICIO DEL HEADER -->
@@ -7,23 +7,25 @@
       <!-- FIN DEL HEADER -->
       
       <div id="registro" class="container">
-        {% block header %} 
+
+        <div class="header">
         <a href="{% url 'home' %}"> <!-- VA A HOME -->
-          <img sr="../../static/images/logo.png" alt="logo" >
+          <img src='{% static "images/logo.png" %}' alt="logo" >
         </a>
-        {% endblock header %}
+      </div>
+
           <h1 class="display">Inicio de sesión</h1><br>
-          <form method="POST" id="formulario">
+          <form method="POST" id="formulario" class="form-login">
               {% csrf_token %}
                       <div class="form-group">
                         <label for="username">Usuario</label><br>
-                        <input name="username" class="form-control" type="text"/>
+                        <input name="username" class="form-control" type="text" id="username"/>
                         <div class="bg-danger mt-1">{{ form.errors.username }}</div>
                       </div>
 
                       <div class="form-group">
                         <label for="password">Contraseña</label><br>
-                        <input name="password" class="form-control" type="password"/>
+                        <input name="password" class="form-control" type="password" id="password"/>
                         <div class="bg-danger mt-1">{{ form.errors.password }}</div>
                     </div>
                     <input type="checkbox" onclick="myFunction()"/>Mostrar contraseña
@@ -43,12 +45,20 @@
     </form>
     
 </div>
-{% block imagen-perros %}
+
 <div class="imagen-perros">
   <img src="../../static/images/perros/perros.jpg" alt="perros"/>
 </div>.
-{% endblock imagen-perros %}
-   
-{% endblock %}
-{% block footer %} {% endblock footer %}
+
+
+<footer class="footer">
+  Tienda para Mascotas &COPY; 2022
+  <p>
+    Dia: <span id="dia"></span> &nbsp; Hora: <span id="hr"></span> &nbsp;
+    Region: <span id="reg"></span>
+  </p>
+</footer>
+
+{% endblock content %}
+
 {% block extrajs %} {% endblock extrajs %}

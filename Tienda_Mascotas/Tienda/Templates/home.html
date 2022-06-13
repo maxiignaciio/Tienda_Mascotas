@@ -2,8 +2,58 @@
 <!-- home.html -->
 {% block title %}Home Page{% endblock title %}
 {% block content %} 
-    <h2>Home</h2>
 
+    <div class="content container">
+      <div class="row">
+          <div class="col-md-8">
+              
+              <div class="header">
+                <nav class="navbar sticky-top navbar-light" >
+                    <a href="{% url 'home' %}">
+                    <img src="../static/images/logo.png"  class="rounded float-left" alt="logo">
+                  </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                            aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{% url 'home' %}">Inicio <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="../paginas/sobre_nosotros.html" target="_blank">Quienes Somos</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Contactanos
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#RS">Redes sociales</a>
+                            <a class="dropdown-item" href="#Fono">Telefono</a>
+                            
+                          </div>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Carrito de compras</a>
+                        </li>
+                        
+                      </ul>
+                      
+                    </div>
+                  </nav>
+            
+                  {% comment %} <a href="menu_login.html" style="list-style: none;"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16" style="list-style: none;">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  </svg></a> {% endcomment %}
+            
+            </div>
+
+        </div>
+    </div>
     <!--- ahora el cuerpo principal donde esta cabeza de perro-->
     <section>
         <div class="principal"> 
@@ -90,4 +140,12 @@
         <p>Your email is - {{user.email}}</p>
         <br><br>
     {% endif %} -->
+    <!-- {% if not user.is_authenticated %}        
+            <li class="nav-item"><a href="{% url 'registrar' %}">registrarse</a></li>
+            <li class="nav-item"><a href="{% url 'login' %}">iniciar sesión</a></li>
+          {% endif %} -->
+    <!-- {% if user.is_authenticated %}
+    <li class="nav-item"><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+    <span class="ml-md-5" style="color: red;"><strong>Usuario: {{ user.get_username }}</strong></span>
+    {% endif %}  -->
 {% endblock content %}

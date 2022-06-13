@@ -1,12 +1,27 @@
 {% extends 'Usuario/base/base.html' %} 
-
+{% block title %} Tienda Mascotas - Registro {% endblock title %}
 {% block content %}
     <h1>Agregar USUARIO</h1>
     
     <div class="content container">
     <form method="POST">
         {% csrf_token %} {{ form.as_p }}
-        <button type="submit">GRABAR</button>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input
+                    type="checkbox"
+                    id="agree"
+                    name="agree"
+                    value="agree"
+                  />Leí y acepto los terminos de uso</label
+                >
+              </div>
+              <em id="agree-error" class="help-block"></em>
+            </div>
+          </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
     </form>
     </div>
 
