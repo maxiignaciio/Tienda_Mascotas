@@ -39,10 +39,16 @@
                 <li class="nav-item"><button class="btn btn-primary" style="background-color: red;"><a href="{% url 'registrar' %}" style="text-decoration: none; color: white;">Registrarse</a></button></li>
                 <li class="nav-item"><button class="btn btn-primary"><a href="{% url 'menu_login' %}" style="text-decoration: none; color: white;">Iniciar Sesión</a></button></li>
             {% endif %}
+
+            {% comment %} {% if user.is_authenticated %} {% endcomment %}
+            {% if user.is_superuser %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'list_productos' %}">Menú Administrativo</a>
+            </li>
+            {% endif %}
             {% if user.is_authenticated %}
             <li class="nav-item"><button class="btn btn-primary" style="background-color: red;"><a href="{% url 'logout' %}" style=" font-size: 20px; text-decoration: none; color: white">Cerrar sesión</a></button></li>
-            <span class="ml-md-5" style="color: white;"><strong>!Bienvenido {{ user.get_username }}¡</strong></span>
-                
+            <span class="ml-md-5" style="color: white;"><strong>!Bienvenid@ {{ user.get_username }}¡</strong></span>
             {% endif %}  
           </ul>
         </div>
@@ -62,8 +68,8 @@
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <a href="pagina_cama_sofa_azul.html"> <!-- LINK A PAGINA-->
-                    <img src="../static/images/productos/cama-sofa-azul-348538_900x.jpg" alt="cama" class="center">
+                    <a href="{% url 'cama_sofa_azul' %}"> <!-- LINK A PAGINA-->
+                    <img src="../../static/images/productos/cama-sofa-azul-348538_900x.jpg" alt="cama" class="center">
                     </a>
                     <div class="container">
                       <div class="carousel-caption text-start">
@@ -73,7 +79,7 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <a href="pagina_correa_arena.html">
+                    <a href="{% url 'correa_arena' %}">
                     <img src="../static/images/productos/nueva-correa-arena-2022-567399_900x.jpg" alt="correa" class="center">
                   </a>
                     <div class="container">
@@ -84,7 +90,7 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <a href="pagina_collar.html">
+                    <a href="{% url 'collar' %}">
                     <img src="../static/images/productos/nuevo-collar-arena-2022-725709_900x.jpg" alt="collar" class="center">
                     </a>
                     <div class="container">
@@ -109,29 +115,29 @@
 
     <div class="contenedor-inferior">
       <aside class="lateral_1">
-          <a href="../paginas/pagina_collar.html">
+          <a href="{% url 'collar' %}">
           <h1>Collar Perro Adulto</h1>
           <img src="../static/images/productos/nuevo-collar-arena-2022-725709_900x.jpg" alt="perrito rescatado" />
           </a>
-          <a href="../paginas/pagina_correa_arena.html">
+          <a href="{% url 'correa_arena' %}">
           <h1>Correa Arena</h1>
           <img src="/static/images/productos/nueva-correa-arena-2022-567399_900x.jpg" alt="correa arena">
           </a>
-          <a href="peluches_juguetes.html">
+          <a href="{% url 'peluches_juguetes' %}">
             <h1>Peluches de juguete</h1>
             <img src="../static/images/productos/trio-brutal-458562_900x.jpg" alt="Peluches">
           </a>
       </aside>
       <aside class="lateral_2">
-          <a href="../paginas/pagina_cama_sofa_azul.html">
+          <a href="{% url 'cama_sofa_azul' %}">
             <h1>Cama Sofá Azul</h1>
             <img src="/static/images/productos/cama-sofa-azul-348538_900x.jpg" alt="financiamiento" />
           </a>
-          <a href="plato_nordico.html">
+          <a href="{% url 'plato_nordico' %}">
             <h1>Plato Nórdico</h1>
             <img src="../static/images/productos/plato-nordico-829507_900x.jpg" alt="Plato nordico">
           </a>
-          <a href="collar_bandana.html">
+          <a href="{% url 'collar_bandana' %}">
             <h1>Collar Bandana</h1>
             <img src="../static/images/productos/collar-bandana.jpg" alt="Collar Bandana">
           </a>
@@ -163,18 +169,4 @@
         </div>
     </section>
 
-    <!-- {% if user.is_authenticated %}
-        <p>Bienvenido a nuestra Pagina - {{user.username}}</p>
-        <p>Your name is - {{user.first_name}} {{user.last_name}}</p>
-        <p>Your email is - {{user.email}}</p>
-        <br><br>
-    {% endif %} -->
-    <!-- {% if not user.is_authenticated %}        
-            <li class="nav-item"><a href="{% url 'registrar' %}">registrarse</a></li>
-            <li class="nav-item"><a href="{% url 'login' %}">iniciar sesión</a></li>
-          {% endif %} -->
-    <!-- {% if user.is_authenticated %}
-    <li class="nav-item"><a href="{% url 'logout' %}">Cerrar sesión</a></li>
-    <span class="ml-md-5" style="color: red;"><strong>Usuario: {{ user.get_username }}</strong></span>
-    {% endif %}  -->
 {% endblock content %}

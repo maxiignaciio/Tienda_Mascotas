@@ -38,7 +38,15 @@
     {% endfor %}
   </tbody>
 </table>
-
+<a class="btn btn-success" href="{% url 'add_productos' %}"
+>Agregar Producto</a>
+<a class="btn btn-info" href="{% url 'home' %}"
+>Volver al Inicio</a>
 {% else %}
 <h1>No hay registros de producto</h1>
+
+<a class="btn btn-success" href="{% url 'add_productos' %}"
+>Agrega productos aquí</a>
+<a class="btn btn-info" href="{% url 'home' %}"
+>Volver al Inicio</a>
 {% endif %} {% endblock %}
