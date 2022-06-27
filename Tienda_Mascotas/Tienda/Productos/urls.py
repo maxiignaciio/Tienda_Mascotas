@@ -11,4 +11,8 @@ urlpatterns = [
  
     path('del_producto/<int:pk>', views.ProductoDelete.as_view(), name='del_producto'),
  
+    # api
+    path('productos/',  views.productos_collection , name='productos_collection'),
+    path('productos/<int:pk>/', views.productos_element ,name='productos_element')
+
 ]

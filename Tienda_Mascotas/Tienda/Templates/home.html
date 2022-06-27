@@ -29,9 +29,6 @@
               <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Carrito de compras</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="{% url 'sobre_nosotros' %}">Sobre Nosotros</a>
             </li>
             {% if not user.is_authenticated %} 
