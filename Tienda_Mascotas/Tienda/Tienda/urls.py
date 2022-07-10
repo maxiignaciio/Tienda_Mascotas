@@ -25,7 +25,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     # localhost:8000/usuario
     path('usuario/', include('Usuario.urls')),
-    
+    path('',include('Mascotas.urls')),
      # Login and Logout
     path('login/', LoginView.as_view(redirect_authenticated_user=True,template_name='Usuario/login.html'), name='login'),
     path('logout/', LogoutView.as_view(template_name='Usuario/logout.html'), name='logout'),

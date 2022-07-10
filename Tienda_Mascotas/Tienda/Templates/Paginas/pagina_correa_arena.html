@@ -20,54 +20,60 @@
       </head>
 <body>
     <!-- NAVEGADOR -->
-<div class="navegador" style="background-color: pink;">
-  <nav class="navbar bg-light fixed-top" >
-    <div class="container-fluid" style="background-color: pink; font-size: 20px;">
-      
-      <a class="navbar-brand" href="{% url 'home' %}">
-        <div class="logo" style="text-align: center;">
-        <img src="../static/images/logo.png" alt="logo">
-      </div>
-      </a>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: pink;">
-        <div class="offcanvas-header" >
-          <h1 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="navegador" style="background-color: pink;">
+      <nav class="navbar bg-light fixed-top" >
+        <div class="container-fluid" style="background-color: pink; font-size: 20px;">
+          
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <div class="logo" style="text-align: center;">
+            <img src="../static/images/logo.png" alt="logo">
+          </div>
+          </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: pink;">
+            <div class="offcanvas-header" >
+              <h1 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'sobre_nosotros' %}">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'list_mascotasadopcion' %}">Mascotas en adopción</a>
+                </li>
+                {% if not user.is_authenticated %} 
+                    
+                    <li class="nav-item"><button class="btn btn-primary" style="background-color: red;"><a href="{% url 'registrar' %}" style="text-decoration: none; color: white;">Registrarse</a></button></li>
+                    <li class="nav-item"><button class="btn btn-primary"><a href="{% url 'menu_login' %}" style="text-decoration: none; color: white;">Iniciar Sesión</a></button></li>
+                {% endif %}
+    
+                {% comment %} {% if user.is_authenticated %} {% endcomment %}
+                {% if user.is_superuser %}
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'list_productos' %}">Menú Administrativo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'add_mascotas' %}">Agregar Mascotas</a>
+                </li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li class="nav-item"><button class="btn btn-primary" style="background-color: red;"><a href="{% url 'logout' %}" style=" font-size: 20px; text-decoration: none; color: white">Cerrar sesión</a></button></li>
+                <span class="ml-md-5" style="color: white;"><strong>!Bienvenid@ {{ user.get_username }}¡</strong></span>
+                {% endif %}  
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'sobre_nosotros' %}">Sobre Nosotros</a>
-            </li>
-            {% if not user.is_authenticated %} 
-                
-                <li class="nav-item"><button class="btn btn-primary" style="background-color: red;"><a href="{% url 'registrar' %}" style="text-decoration: none; color: white;">Registrarse</a></button></li>
-                <li class="nav-item"><button class="btn btn-primary"><a href="{% url 'menu_login' %}" style="text-decoration: none; color: white;">Iniciar Sesión</a></button></li>
-            {% endif %}
-
-            {% comment %} {% if user.is_authenticated %} {% endcomment %}
-            {% if user.is_superuser %}
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'list_productos' %}">Menú Administrativo</a>
-            </li>
-            {% endif %}
-            {% if user.is_authenticated %}
-            <li class="nav-item"><button class="btn btn-primary" style="background-color: red;"><a href="{% url 'logout' %}" style=" font-size: 20px; text-decoration: none; color: white">Cerrar sesión</a></button></li>
-            <span class="ml-md-5" style="color: white;"><strong>!Bienvenid@ {{ user.get_username }}¡</strong></span>
-            {% endif %}  
-          </ul>
-        </div>
+      </nav>  
       </div>
-    </div>
-  </nav>  
-  </div> 
       <!-- FIN NAVEGADOR -->
 
         <div class="flex-container">

@@ -6,13 +6,16 @@ from .forms import ProductoForm
 
 #------------- importacines API ---------------------
 from django.http import HttpResponse
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from .serializers import ProductosSerializer
 from django.shortcuts import render, redirect, get_object_or_404
 from rest_framework import status
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser 
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 #----- API
 
@@ -24,7 +27,9 @@ from rest_framework.parsers import JSONParser
 #=============== API REST ===========================
 # El decorador @api_view verifica que la solicitud HTTP apropiada 
 # se pase a la función de vista. En este momento, solo admitimos solicitudes GET
+@csrf_exempt
 @api_view(['GET', 'POST'])
+@permission_classes((IsAuthenticated,))
 def productos_collection(request):
     if request.method == 'GET':
         productos = Producto.objects.all()
@@ -43,6 +48,7 @@ def productos_collection(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes((IsAuthenticated,))
 def productos_element(request, pk):
     producto = get_object_or_404(Producto, id=pk)
 

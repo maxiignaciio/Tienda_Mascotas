@@ -5,6 +5,9 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 
+from Usuario import views
+from Usuario.views import login
+
 urlpatterns = [
     
     # localhost:8000/usuario/registrar
@@ -19,4 +22,5 @@ urlpatterns = [
     path('plato_nordico', TemplateView.as_view(template_name='Paginas/plato_nordico.html'), name='plato_nordico'),
     path('peluches_juguetes', TemplateView.as_view(template_name='Paginas/peluches_juguetes.html'), name='peluches_juguetes'),
     path('collar_bandana', TemplateView.as_view(template_name='Paginas/collar_bandana.html'), name='collar_bandana'),
+    path('login', login, name='login'),
 ]  

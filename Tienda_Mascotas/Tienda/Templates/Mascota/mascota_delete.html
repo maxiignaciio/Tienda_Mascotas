@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+ 
+{% block content %}
+    <div class="text-center">
+        <form method="post">
+            {% csrf_token %}
+ 
+            <p class="delete-msg">Estás seguro de eliminar a la mascota {{ object.nombre }}?</p>
+ 
+            <a href="{% url 'list_mascotas' %}" class="btn btn-secondary">NO</a>
+            <button class="btn btn-primary" type="submit">Si</button>
+        </form>
+    </div>
+{% endblock %}
